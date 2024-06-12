@@ -18,6 +18,27 @@ variable "resource_group_name" {
   type        = string
 }
 
+variable "subscription_id" {
+  description = "Subscription ID"
+  type        = string
+}
+
+variable "client_id" {
+  description = "Client ID"
+  type        = string
+}
+
+variable "client_secret" {
+  description = "SPN secret"
+  type        = string
+}
+
+variable "tenant_id" {
+  description = "Tenant ID"
+  type        = string
+}
+
+
 provider "azurerm" {
   features {}
 }

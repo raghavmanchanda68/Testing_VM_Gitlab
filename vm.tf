@@ -30,7 +30,7 @@ resource "azurerm_virtual_machine" "main" {
 
   delete_os_disk_on_termination = true
   network_interface_ids = [
-    azurerm_network_interface.example.id,
+    azurerm_network_interface.main.id,
   ]
   storage_image_reference {
     publisher = "Canonical"

@@ -24,7 +24,7 @@ provider "azurerm" {
 
 resource "azurerm_virtual_machine" "main" {
   name                  = var.vm_name
-  location              = "West Europe"
+  location              = "West US"
   resource_group_name   = var.resource_group_name
   network_interface_id  = azurerm_network_interface.main.id
   vm_size               = "Standard_D2s_v3"
@@ -57,7 +57,7 @@ resource "azurerm_virtual_machine" "main" {
 
 resource "azurerm_network_interface" "main" {
   name                = var.nic_name
-  location            = "West Europe"
+  location            = "West US"
   resource_group_name = var.resource_group_name
 
   ip_configuration {
@@ -69,7 +69,7 @@ resource "azurerm_network_interface" "main" {
 
 resource "azurerm_virtual_network" "main" {
   name                = var.vnet_name
-  location            = "West Europe"
+  location            = "West US"
   resource_group_name = var.resource_group_name
   address_space       = ["10.0.0.0/16"]
 }

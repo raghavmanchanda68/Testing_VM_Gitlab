@@ -26,11 +26,12 @@ resource "azurerm_virtual_machine" "main" {
   name                  = var.vm_name
   location              = "West US"
   resource_group_name   = var.resource_group_name
-  network_interface_id  = azurerm_network_interface.main.id
   vm_size               = "Standard_D2s_v3"
 
   delete_os_disk_on_termination = true
-
+  network_interface_ids = [
+    azurerm_network_interface.example.id,
+  ]
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -78,5 +79,5 @@ resource "azurerm_subnet" "internal" {
   name                 = "internal"
   resource_group_name  = var.resource_group_name
   virtual_network_name = azurerm_virtual_network.main.name
-  address_prefixes       = "10.0.2.0/24"
+  address_prefixes       = ["10.0.2.0/24"]
 }

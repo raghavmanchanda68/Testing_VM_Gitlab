@@ -17,27 +17,6 @@ variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
 }
-/*
-variable "subscription_id" {
-  description = "Subscription ID"
-  type        = string
-}
-
-variable "client_id" {
-  description = "Client ID"
-  type        = string
-}
-
-variable "client_secret" {
-  description = "SPN secret"
-  type        = string
-}
-
-variable "tenant_id" {
-  description = "Tenant ID"
-  type        = string
-}
-*/
 
 resource "azurerm_network_interface" "example" {
   name                = var.nic_name
@@ -71,7 +50,8 @@ resource "azurerm_linux_virtual_machine" "example" {
   resource_group_name             = var.resource_group_name
   size                            = "Standard_DS1_v2"
   computer_name                   = var.vm_name
-  admin_username                  = "vmusername11"
+  admin_username                  = "mysecureadmin"
+  admin_password                  = "Admin@12345"
   disable_password_authentication = false
 
   network_interface_ids = [

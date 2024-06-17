@@ -71,7 +71,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   resource_group_name             = var.resource_group_name
   size                            = "Standard_DS1_v2"
   computer_name                   = var.vm_name
-  admin_username                  = "gitlabtesting"
+  admin_username                  = "gitlabuser"
   admin_password                  = "admin@12345"
   disable_password_authentication = false
 

@@ -20,10 +20,12 @@ variable "resource_group_name" {
 variable "username" {
   description = "The name of the VM"
   type        = string
+  default = "cprabhat"
 }
 variable "password" {
   description = "The name of the VM"
   type        = string
+  default = "Raghav@12345"
 }
 
 resource "azurerm_network_interface" "example" {

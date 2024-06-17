@@ -43,27 +43,6 @@ resource "azurerm_subnet" "example" {
   address_prefixes     = ["10.0.1.0/24"]
 }
 
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
-    }
-  }
-  backend "azurerm" {
-    resource_group_name  = "rg-MOCPEDemo-kcl-westus-003"
-    storage_account_name = "gitlabtf"
-    container_name       = "gitlab-cont"
-    key                  = "test.terraform.tfstate"
-  }
-}
-provider "azurerm" {
-
-  features {
-  }
-
-}
-
 
 resource "azurerm_linux_virtual_machine" "example" {
   name                            = var.vm_name

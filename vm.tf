@@ -62,7 +62,6 @@ resource "azurerm_windows_virtual_machine" "example" {
   computer_name                   = var.vm_name
   admin_username                  = var.username
   admin_password                  = var.password
-  disable_password_authentication = false
 
   network_interface_ids = [
     azurerm_network_interface.example.id,

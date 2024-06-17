@@ -52,7 +52,7 @@ resource "azurerm_subnet" "example" {
 }
 
 
-resource "azurerm_linux_virtual_machine" "example" {
+resource "azurerm_windows_virtual_machine" "example" {
   name                            = var.vm_name
   location                        = "westus"
   resource_group_name             = var.resource_group_name

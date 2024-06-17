@@ -17,6 +17,14 @@ variable "resource_group_name" {
   description = "The name of the resource group"
   type        = string
 }
+variable "admin_username" {
+  description = "The name of the VM"
+  type        = string
+}
+variable "admin_password" {
+  description = "The name of the VM"
+  type        = string
+}
 
 resource "azurerm_network_interface" "example" {
   name                = var.nic_name
@@ -50,8 +58,8 @@ resource "azurerm_linux_virtual_machine" "example" {
   resource_group_name             = var.resource_group_name
   size                            = "Standard_DS1_v2"
   computer_name                   = var.vm_name
-  admin_username                  = "gitlabuser123"
-  admin_password                  = "Admin@12345"
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
   disable_password_authentication = false
 
   network_interface_ids = [
